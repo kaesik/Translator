@@ -46,6 +46,10 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
+            implementation(libs.bundles.ktor)
+            implementation(libs.sqldelight.runtime)
+            implementation(libs.sqldelight.coroutines.extensions)
+            implementation(libs.kotlin.date.time)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
