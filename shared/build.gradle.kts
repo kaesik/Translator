@@ -51,6 +51,17 @@ kotlin {
             implementation(libs.sqldelight.coroutines.extensions)
             implementation(libs.kotlin.date.time)
         }
+
+        androidMain.dependencies {
+            implementation(libs.ktor.android)
+            implementation(libs.sqldelight.android.driver)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.ios)
+            implementation(libs.sqldelight.native.driver)
+        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
