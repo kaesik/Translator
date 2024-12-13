@@ -19,6 +19,13 @@ android {
 
         testInstrumentationRunner = "com.kaesik.translatorkmm.TestHiltRunner"
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+    kotlinOptions {
+        jvmTarget = "21"
+    }
     buildFeatures {
         compose = true
     }
@@ -32,13 +39,6 @@ android {
         getByName("release") {
             isMinifyEnabled = false
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
 
     implementation(libs.hilt.android)
+    implementation(project(":shared"))
     ksp(libs.hilt.android.compiler)
     implementation(libs.hilt.navigation.compose)
 
