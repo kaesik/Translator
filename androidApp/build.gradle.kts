@@ -51,16 +51,20 @@ dependencies {
     implementation(libs.compose.foundation)
     implementation(libs.compose.material3)
     implementation(libs.compose.runtime)
+    debugImplementation(libs.compose.ui.tooling)
 
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(platform(libs.androidx.compose.bom))
 
-    implementation(libs.hilt.android)
-    implementation(project(":shared"))
     ksp(libs.hilt.android.compiler)
+    implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
 
     implementation(libs.ktor.android)
 
-    debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.coil.compose)
+
+    kspAndroidTest(libs.hilt.android.compiler)
     androidTestImplementation(libs.hilt.testing)
 }

@@ -1,4 +1,4 @@
-package com.kaesik.translator.android
+package com.kaesik.translator.android.translate.presentation
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
