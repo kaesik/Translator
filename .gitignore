@@ -8,3 +8,4 @@ captures
 .cxx
 local.properties
 xcuserdata
+/shared/src/commonMain/kotlin/com/kaesik/translator/translate/data/translate/BaseUrl.kt

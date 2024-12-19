@@ -1,6 +1,7 @@
 package com.kaesik.translator.translate.data.translate
 
 import com.kaesik.translator.core.domain.language.Language
+import com.kaesik.translator.translate.data.translate.BaseUrl.BASE_URL
 import com.kaesik.translator.translate.domain.translate.TranslateClient
 import com.kaesik.translator.translate.domain.translate.TranslateError
 import com.kaesik.translator.translate.domain.translate.TranslateException
@@ -23,7 +24,7 @@ class KtorTranslateClient(
     ): String {
         val result = try {
             httpClient.post {
-                url("" + "/translate")
+                url("$BASE_URL/translate")
                 contentType(ContentType.Application.Json)
                 setBody(
                     TranslateDto(
