@@ -1,5 +1,6 @@
 package com.kaesik.translator.android.translate.presentation
 
+import android.speech.tts.TextToSpeech
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -22,8 +23,10 @@ import com.kaesik.translator.android.translate.presentation.components.FromLangu
 import com.kaesik.translator.android.translate.presentation.components.SwapLanguagesButton
 import com.kaesik.translator.android.translate.presentation.components.ToLanguageDropDown
 import com.kaesik.translator.android.translate.presentation.components.TranslateTextField
+import com.kaesik.translator.android.translate.presentation.components.RememberTextToSpeech
 import com.kaesik.translator.translate.presentation.TranslateEvent
 import com.kaesik.translator.translate.presentation.TranslateState
+import java.util.Locale
 
 @Composable
 fun TranslateScreen(
@@ -69,6 +72,7 @@ fun TranslateScreen(
             item {
                 val clipboardManager = LocalClipboardManager.current
                 val keyboardController = LocalSoftwareKeyboardController.current
+                val tts = RememberTextToSpeech()
                 TranslateTextField(
                     fromText = state.fromText,
                     toText = state.toText,
@@ -90,7 +94,15 @@ fun TranslateScreen(
                         ).show()
                     },
                     onCloseClick = { onEvent(TranslateEvent.CloseTranslation) },
-                    onSpeakerClick = {  },
+                    onSpeakerClick = {
+                        tts.language = state.toLanguage.toLocale() ?: Locale.ENGLISH
+                        tts.speak(
+                            state.toText,
+                            TextToSpeech.QUEUE_FLUSH,
+                            null,
+                            null,
+                        )
+                    },
                     onTextFieldClick = { onEvent(TranslateEvent.EditTranslation) },
                     modifier = Modifier.fillMaxWidth()
                 )
