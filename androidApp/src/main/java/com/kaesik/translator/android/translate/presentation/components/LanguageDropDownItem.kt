@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -19,14 +20,13 @@ fun LanguageDropDownItem(
     DropdownMenuItem(
         onClick = onClick,
         modifier = modifier,
-        text = { language.language.langName },
+        text = { Text(text = language.language.langName) },
         leadingIcon = {
             Image(
                 painter = painterResource(id = language.drawableRes),
                 contentDescription = language.language.langName,
                 modifier = Modifier.size(40.dp)
             )
-            Spacer(modifier = Modifier.size(16.dp))
         },
     )
 }

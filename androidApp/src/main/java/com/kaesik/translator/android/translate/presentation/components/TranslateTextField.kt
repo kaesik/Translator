@@ -115,7 +115,8 @@ private fun TranslatedTextField(
         Spacer(modifier = Modifier.height(16.dp))
         Text(
             text = fromText,
-            color = MaterialTheme.colorScheme.onSurface
+            color = MaterialTheme.colorScheme.onSurface,
+            style = MaterialTheme.typography.bodyMedium
         )
         Spacer(modifier = Modifier.height(16.dp))
         Row(
@@ -145,7 +146,8 @@ private fun TranslatedTextField(
         Spacer(modifier = Modifier.height(16.dp))
         Text(
             text = toText,
-            color = MaterialTheme.colorScheme.onSurface
+            color = MaterialTheme.colorScheme.onSurface,
+            style = MaterialTheme.typography.bodyMedium
         )
         Spacer(modifier = Modifier.height(16.dp))
         Row(
@@ -193,7 +195,8 @@ private fun IdleTranslateTextField(
         if (fromText.isEmpty() && !isFocused) {
             Text(
                 text = stringResource(id = R.string.enter_a_text_to_translate),
-                color = LightBlue
+                color = LightBlue,
+                style = MaterialTheme.typography.bodyMedium
             )
         }
         ProgressButton(

@@ -42,6 +42,7 @@ fun ProgressButton(
                 Text(
                     text = text.uppercase(),
                     color = MaterialTheme.colorScheme.onPrimary,
+                    style = MaterialTheme.typography.bodyMedium
                 )
             }
         }

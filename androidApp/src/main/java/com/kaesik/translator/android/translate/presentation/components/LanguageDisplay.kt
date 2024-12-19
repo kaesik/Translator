@@ -3,6 +3,7 @@ package com.kaesik.translator.android.translate.presentation.components
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,7 +25,8 @@ fun LanguageDisplay(
         Spacer(modifier = Modifier.width(8.dp))
         Text(
             text = language.language.langName,
-            color = LightBlue
+            color = LightBlue,
+            style = MaterialTheme.typography.bodyMedium
         )
     }
 }
