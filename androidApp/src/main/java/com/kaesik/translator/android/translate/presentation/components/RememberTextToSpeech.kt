@@ -7,7 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 
 @Composable
-fun RememberTextToSpeech(): TextToSpeech {
+fun rememberTextToSpeech(): TextToSpeech {
     val context = LocalContext.current
     val tts = remember {
         TextToSpeech(context, null)

@@ -1,7 +1,6 @@
 package com.kaesik.translator.android.translate.presentation.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Text

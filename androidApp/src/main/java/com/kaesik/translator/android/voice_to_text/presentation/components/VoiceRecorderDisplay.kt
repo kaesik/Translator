@@ -19,7 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kaesik.translator.android.translate.presentation.TranslatorTheme
 import com.kaesik.translator.android.translate.presentation.components.gradientSurface
-import kotlin.math.sin
 import kotlin.random.Random
 
 @Composable
