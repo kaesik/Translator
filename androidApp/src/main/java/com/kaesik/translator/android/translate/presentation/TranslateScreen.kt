@@ -35,8 +35,8 @@ import com.kaesik.translator.android.translate.presentation.components.FromLangu
 import com.kaesik.translator.android.translate.presentation.components.SwapLanguagesButton
 import com.kaesik.translator.android.translate.presentation.components.ToLanguageDropDown
 import com.kaesik.translator.android.translate.presentation.components.TranslateTextField
-import com.kaesik.translator.android.translate.presentation.components.RememberTextToSpeech
 import com.kaesik.translator.android.translate.presentation.components.TranslateHistoryItem
+import com.kaesik.translator.android.translate.presentation.components.rememberTextToSpeech
 import com.kaesik.translator.translate.domain.translate.TranslateError
 import com.kaesik.translator.translate.presentation.TranslateEvent
 import com.kaesik.translator.translate.presentation.TranslateState
@@ -115,7 +115,7 @@ fun TranslateScreen(
             item {
                 val clipboardManager = LocalClipboardManager.current
                 val keyboardController = LocalSoftwareKeyboardController.current
-                val tts = RememberTextToSpeech()
+                val tts = rememberTextToSpeech()
                 TranslateTextField(
                     fromText = state.fromText,
                     toText = state.toText,

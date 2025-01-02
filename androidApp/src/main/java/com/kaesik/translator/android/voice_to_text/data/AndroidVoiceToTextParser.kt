@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.speech.SpeechRecognizer.ERROR_CLIENT
 import com.kaesik.translator.android.R
 import com.kaesik.translator.core.domain.util.CommonStateFlow
 import com.kaesik.translator.core.domain.util.toCommonStateFlow
@@ -70,6 +71,12 @@ class AndroidVoiceToTextParser(
     }
 
     override fun onError(error: Int) {
+        if (error == ERROR_CLIENT) {
+            return
+        }
+        if (error == SpeechRecognizer.ERROR_NO_MATCH) {
+            return
+        }
         _state.update { it.copy(error = "Error: $error") }
     }
 
