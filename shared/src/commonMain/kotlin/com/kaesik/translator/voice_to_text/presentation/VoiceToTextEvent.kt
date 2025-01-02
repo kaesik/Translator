@@ -4,7 +4,7 @@ sealed class VoiceToTextEvent {
     data object Close: VoiceToTextEvent()
     data class PermissionResult(
         val isGranted: Boolean,
-        val isPermanentlyDisplayState: DisplayState,
+        val isPermanentlyDeclined: Boolean
     ): VoiceToTextEvent()
     data class ToggleRecording(val languageCode: String): VoiceToTextEvent()
     data object Reset: VoiceToTextEvent()
