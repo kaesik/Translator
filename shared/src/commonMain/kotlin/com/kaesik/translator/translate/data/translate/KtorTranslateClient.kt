@@ -12,6 +12,7 @@ import io.ktor.client.request.setBody
 import io.ktor.client.request.url
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
+import io.ktor.http.headers
 
 class KtorTranslateClient(
     private val httpClient: HttpClient
@@ -24,7 +25,11 @@ class KtorTranslateClient(
     ): String {
         val result = try {
             httpClient.post {
-                url("$BASE_URL/translate")
+                //url("$BASE_URL/translate")
+                url("http://192.168.x.x:5000")
+                headers {
+                    //append("Authorization", "TUTAJ BYŁBY KLUCZ DO API")
+                }
                 contentType(ContentType.Application.Json)
                 setBody(
                     TranslateDto(
