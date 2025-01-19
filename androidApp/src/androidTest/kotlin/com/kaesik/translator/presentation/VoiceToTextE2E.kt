@@ -73,8 +73,11 @@ class VoiceToTextE2E {
             .onNodeWithContentDescription(context.getString(R.string.stop_recording))
             .performClick()
 
+        composeRule.waitForIdle()
+
         composeRule
             .onNodeWithText(parser.result)
+            .assertExists()
             .assertIsDisplayed()
 
         composeRule
@@ -83,18 +86,22 @@ class VoiceToTextE2E {
 
         composeRule
             .onNodeWithText(parser.result)
+            .assertExists()
             .assertIsDisplayed()
 
         composeRule
             .onNodeWithText(context.getString(R.string.translate), ignoreCase = true)
+            .assertExists()
             .assertIsDisplayed()
 
         composeRule
             .onNodeWithText(parser.result)
+            .assertExists()
             .assertIsDisplayed()
 
         composeRule
             .onNodeWithText(client.translatedText)
+            .assertExists()
             .assertIsDisplayed()
     }
 }

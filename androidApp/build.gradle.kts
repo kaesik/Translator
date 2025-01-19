@@ -68,12 +68,9 @@ dependencies {
     kspAndroidTest(libs.hilt.android.compiler)
     androidTestImplementation(libs.hilt.testing)
 
-    implementation(libs.androidx.compose.material.icons.extended)
-
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.test.runner)
     androidTestImplementation(libs.test.rule)
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
 }

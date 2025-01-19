@@ -13,7 +13,7 @@ class FakeVoiceToTextParser: VoiceToTextParser {
     override val state: CommonStateFlow<VoiceToTextParserState>
         get() = _state.toCommonStateFlow()
 
-    var result = "translated text"
+    var result = "translated"
 
     override fun startListening(languageCode: String) {
         _state.update { it.copy(
