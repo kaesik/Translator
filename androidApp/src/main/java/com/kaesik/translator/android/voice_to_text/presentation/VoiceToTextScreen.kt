@@ -55,7 +55,7 @@ fun VoiceToTextScreen(
 ) {
     val context = LocalContext.current
     val recordAudioLauncher = rememberLauncherForActivityResult(
-        contract =ActivityResultContracts.RequestPermission(),
+        contract = ActivityResultContracts.RequestPermission(),
         onResult = { isGranted ->
             onEvent(
                 VoiceToTextEvent.PermissionResult(

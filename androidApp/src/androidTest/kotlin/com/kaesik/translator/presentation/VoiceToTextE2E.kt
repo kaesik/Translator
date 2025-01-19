@@ -73,8 +73,6 @@ class VoiceToTextE2E {
             .onNodeWithContentDescription(context.getString(R.string.stop_recording))
             .performClick()
 
-        composeRule.waitForIdle()
-
         composeRule
             .onNodeWithText(parser.result)
             .assertExists()
