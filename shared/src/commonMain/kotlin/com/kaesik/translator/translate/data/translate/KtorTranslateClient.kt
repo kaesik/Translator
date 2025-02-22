@@ -25,7 +25,7 @@ class KtorTranslateClient(
     ): String {
         val result = try {
             httpClient.post {
-                url("$BASE_URL/translate")
+                url("s/translate")
                 headers {
                     //append("Authorization", "TUTAJ BYŁBY KLUCZ DO API")
                 }
